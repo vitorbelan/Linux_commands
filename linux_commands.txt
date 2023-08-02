@@ -1,0 +1,310 @@
+linux
+guia de sobrevivencia
+
+    apt-get                                         instalar um app
+    ls                                              lista os arquvios
+    ls -la                                          lista arquvios ocultos
+    ls -L                                           lista os arquivos em formado de lista
+    pwd                                             mostra o diretorio onde estou
+    df -k                                           particoes que tenho na maquina
+    cd                                              acessar o diretorio
+    cd ~                                            atalho para diretorio home
+    man <comando>                                   abre o manual para o respectivo comando 
+                                                        EXEMPPLO? man ls
+    hostname                                        nome da maquina
+    whoami                                          usuario que esta logado
+    top                                             mostra todos os serviços rodando no SO
+    ctrl z                                          sair da aplicacao
+    mkdir                                           criar um diretorio (make a directory)
+    touch                                           cria um arquivo vazio
+                                                        Exemplo: touch teste.txt
+    gedit                                           nome do editor de texto quee abre uma                   
+                                                     interfaxe grãfica, EXÇ gedit teste.txt
+    nano                                            editor de texto sem interface grãfica
+    vi                                              editor de texto sem interface grãfica
+                                                        vi teste.txt        
+                                                        i -> entrar modo edicao 
+                                                        ESC -> sair do modo edicao
+                                                        :w salvar do arquivo
+                                                        :q sair do arquivo
+
+    cat                                             visualiar o contreudo do arquivo
+
+    find /home -name <nome do arqv>                 pesquisar um arquivo 
+                                                         exemplo: fin /home -name texte.txt
+    apt-get update                                  atualizar a imagem
+    su <nomeusuario>                                troca de usuario
+
+    sequencia para alterar                          1- su root 
+    usuario para sudo                               2- nano /etc/sudoers
+                                                        #User privilege specification
+                                                            root     ALL=(ALL:ALL) ALL
+                                                            username ALL=(ALL:ALL) ALL
+                                                        Then add the user below admin user like below syntax.
+                                                            user_name ALL=(ALL)  ALL
+                                                    3- Save the file (press esc and type :x if vim is your default text editor, for nano press ctrl+o, enter and then ctrl+x).
+
+
+
+
+Criar usaurio via linha de comando  
+    adduser             adduser <nome do usuario>
+                            precisa de licenca de adm para isso usar o comando sudo
+                            sudo adduser usu_exemplo
+
+    vi /etc/passwd       comando usuado para ver os usuarios crados, :q comando usado para sairr da tela
+
+Adicionando e visualizando previlégios
+    chmod 777           comando usado para colocar todos uisaurios do grupo para ler escrver e executar
+                        ao usar o ls -la
+                            os diretorios começam com c e os que    
+                                          começam com - é um arquivo
+                            -aaa-aaa-aaa -> cada posicao significa algo r- read (4) w-> write (2) x-> execute (1)
+                            -421-421-421    o primeiro conjunto de caracteres se refere ao owner o 2 para o grupo e o 3 para qualquer outro usuario
+                            exemplo cmod 777 <nome do arquivo>
+                                    cmod 777  teste.txt
+
+
+2222222222222222 2222222222222222      
+2222222222222222 2222222222222222      
+            2222 2222        2222      
+          22222  2222        2222     
+        22222    2222222222222222   
+      22222      2222222222222222 
+    22222        2222        2222
+  22222          2222        2222
+2222222222222222 2222222222222222      
+2222222222222222 2222222222222222      
+
+
+
+Configurando acesso remoto via SSH -- Aula 28
+    Secure shell 
+
+    sudo -aptget install openssh-server         instalando o o open ssh
+    service ssh status                           verifica se esta tudo ok e rodando0265 89256
+    ifconfig                                    verifica as portas de rede
+
+    
+2222222222222222 2222222222222222      
+2222222222222222 2222222222222222      
+            2222 2222        2222      
+          22222  2222        2222     
+        22222    2222222222222222   
+      22222      2222222222222222 
+    22222                    2222
+  22222                      2222
+2222222222222222 2222222222222222      
+2222222222222222 2222222222222222  
+
+
+Backups
+
+wget <url>                                donwload de um arquivo via linha de comando
+
+unzip <nome arquivo>                      descompactar arquivo
+
+cp <diretorio_ fonte>  <dir_destino>      copia de um arquivo
+                                          EXEMPLO:  cp -R /home/vitorbelan/Downloads/ml-100k/* /home/vitorbelan/Downloads/backup_data
+
+tar                                       compactar arquivo   
+                                            ex: tar -cvf backup_data.tar backup_data/
+                                                <comando>  -<copiar><v-verbose mostrar na tela><-f force do copy> <nome do arquivo a ser gerado> <nome do diretorio que quero compactar>
+gzip                                      compactar um arquivo usando gzip  
+                                            gzip <nome do arquivo>
+
+gunzip                                    descompacar o arquivo 
+                                            ungzip <nm arqv>
+
+
+tar -tvf <nome arquivo>                   ver o nome do arqv tipo tar
+
+tar -tvf <nome arquivo> | grep < nome arquivo em especifico retorna um unico item
+
+
+rm -rf <nome dor arv>                     apaga completamente o arqv
+tar -xvf <nome do arquivo>                descompacta um arv tipo tar 
+
+tar -czvf <nomearqv final> < nome do arv fonte>
+
+
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+            2222  2222        2222
+            2222  2222        2222
+2222222222222222  2222        2222
+2222222222222222  2222        2222
+            2222  2222        2222
+            2222  2222        2222
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+
+copiando arquivo local para ambiente virutal e vice versa
+
+
+no prompt do winddows depois de baixar o scp:
+  pscp -scp <usuario><nomeservidor><:><diretorio> <nome na maq local>
+
+copiar arvq da maq local para o servidor
+ usar o meesmo comando mas inverte as posiçoes
+
+
+
+2222222222222222              2222
+2222222222222222              2222
+            2222              2222
+            2222              2222
+2222222222222222              2222
+2222222222222222              2222
+            2222              2222
+            2222              2222
+2222222222222222              2222
+2222222222222222              2222
+
+
+Como mudar o proprietario de um arquivoÇ
+Com alterar a senha do usuario root
+  usando o SU, tem que definir depois que instala, agluns sistemas pedem pra inserir a senha do root na instalaçao, no ubbunto desktop nao
+   comando::
+      sudo passwd root  --> defina a nova senha
+
+movendo um arquivo  
+    mv <arquivo> <diretório>
+    mv backup_data_tar-gz /tmp
+
+mudando o proprieetario de arquiv9o
+    codigo
+    chown <user><grupo> <nomearquivo>
+
+
+
+
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+            2222              2222
+            2222            22222 
+2222222222222222          22222   
+2222222222222222        22222     
+            2222      22222       
+            2222    22222         
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+
+tree -L l
+  permite visuazliar a arvore de diretorio  
+
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+            2222              2222
+            2222              2222
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+            2222              2222
+            2222              2222
+2222222222222222  2222222222222222
+2222222222222222  2222222222222222
+
+
+Adiconando disco e montando parti~caso
+
+  sistema de arquivos -> conjuntos de estrutura lõgicas que permitem o sistema op controlar o acesso ao disco rigidio
+                          ~e um software que permite o Sist Oper acessar o HD 
+
+  acessando isso no linux
+    cmd::: df -Th
+    cmd::: lsblk -f
+    cmd::: disktype /dev/sda1
+    cmd::: gparted 
+            usando uma interface gráfica
+            baixe o xming para windows
+            xquart para mac
+
+2222222222222222   2222        2222    
+2222222222222222   2222        2222    
+            2222   2222        2222    
+            2222   2222        2222    
+2222222222222222   2222222222222222   
+2222222222222222   2222222222222222 
+            2222               2222
+            2222               2222
+2222222222222222               2222    
+2222222222222222               2222    
+
+
+Adicionando um HD
+  criando particóes
+    sudo fdisk
+
+
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+            2222 2222        
+            2222 2222        
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+            2222             2222
+            2222             2222
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+
+which bach
+vitorbelan@Ubuntu:~$ touch hellow_word.sh
+vitorbelan@Ubuntu:~$ nano hellow_word.sh
+vitorbelan@Ubuntu:~$ CTRL+X PARA SAIR
+
+
+ interpretador bash nativo do sistema linux
+  criando um arquivo vazio com o touch 
+      #! /bin/bash
+      TEXTO="Hello Word"
+      echo $TEXTO
+      
+      editando o executavel dentro do arquivo usando o nano
+      vitorbelan@Ubuntu:~$ nano hellow_word.sh
+      vitorbelan@Ubuntu:~$ nano hellow_word.shel
+
+      alterando a permissao para executar o arquivo
+      vitorbelan@Ubuntu:~$ chmod 755 hellow_word.sh
+      
+      
+      comandos para executar o arqivo bash
+      vitorbelan@Ubuntu:~$ ./hellow_word.sh 
+      vitorbelan@Ubuntu:~$ bash hellow_word.sh
+
+
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+            2222 2222        
+            2222 2222        
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+            2222 2222        2222
+            2222 2222        2222
+2222222222222222 2222222222222222
+2222222222222222 2222222222222222
+
+vitorbelan@Ubuntu:~$ pwd
+/home/vitorbelan
+vitorbelan@Ubuntu:~$ mkdir Scripts
+vitorbelan@Ubuntu:~$ ls
+Desktop  Documents  Downloads  Files  hellow_word.sh  Music  Pictures  Public  Scripts  snap  Templates  Videos
+vitorbelan@Ubuntu:~$ mv hellow_word.sh Scripts/
+vitorbelan@Ubuntu:~$ ls
+Desktop  Documents  Downloads  Files  Music  Pictures  Public  Scripts  snap  Templates  Videos
+vitorbelan@Ubuntu:~$ mkdir /tmp/Backup
+vitorbelan@Ubuntu:~$ cd Scripts
+vitorbelan@Ubuntu:~/Scripts$ ls -la
+total 12
+drwxrwxr-x  2 vitorbelan vitorbelan 4096 jul  4 20:18 .
+drwxr-x--- 18 vitorbelan vitorbelan 4096 jul  4 20:18 ..
+-rwxr-xr-x  1 vitorbelan vitorbelan   44 jul  4 19:48 hellow_word.sh
+vitorbelan@Ubuntu:~/Scripts$
+
+
+
+
+
+
+
+
+
