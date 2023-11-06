@@ -97,4 +97,17 @@ lista completa
   /var/tmp : Arquivos temporários. Quando usado em modo multi-usuário.
 
 
-  desligando e reiniciando linux
+  # desligando e reiniciando linux
+
+halt: desliga
+reboot: rebuta
+shutdown -h : desliga
+shutdown -h now: desliga agora
+shutdown -h 18:00 : desliga a maquina as 18
+shutdown -h +30   : desliga a maquina em 30 minutos
+shutdown -r : reboota
+shutdown -r now:  reboota agora
+shutdown -c : cancela o comando de desligar/rebootar
+poweroff:  desliga
+init 0  : desliga
+init 6 : reboota
