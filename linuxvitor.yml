@@ -1,0 +1,100 @@
+linuxvitor
+DellApus1234!@
+DellApus1234!@
+
+ssh nome_usuario_na_maq_aser_acessada@ip_da_maquina
+
+cat /etc/debian_version
+
+su - comando par ir pro root
+su root
+
+cd   : vai pro diretorio home
+cd - : vai no ultimo diretorio
+
+
+ls      : lista os arquivos visiveis
+ls -a   : lista todos aqruivos visiveis e inviseis
+ls -la  : lista todos os arquivos com detalhes
+ls -lha : lista todos os arquivos com detalhes mais readble
+history : historico de comandos que utilizei
+
+shell   : interface que tenho para interagir com meu sistema
+
+ao digitar ls -la
+"."     : referncia ao diretorio atual
+".."    : referencia ao diretorio anterior
+drw     : sempre que a linha começa com "d" é um diretorio
+
+cd ../../../ : vai retornar 3 diretorios anteriores ao atual e assim por diante
+
+
+FHS     : FILESYSTEM HIERARCH STANDARD
+/bin    : onde estao os binarios do sistema. Tudo que sao arquivos, programinhas, executaveis.
+/boot   : arquvios fundamentais para o boot, inicializacao do sistema
+/dev    : onde vao estar todos meus dispositivos
+/etc    : toda configuracao e arquivos de configuracao da máquina
+/lib    : bibliotecas dinamicas compartilhadas, módulos do kernel
+/mnt    : ponto de montagemm temporario
+/opt    : onde instalei um software
+/proc   : filesystem virtual, onde vai ter informações virtuais e dinamicas do kernel e processos
+/root   : diretorio home do usuario root
+/run    : informacoes do que esta rodando desde quando foi dado o ultimo boot do arquivo
+/sbin   : binarios de uso exclusivo do usuario root
+/srv    : dados estaticos servidos pelo sistemas. ex; serviços do apache, http, do git
+/sys    : dados dos drivers relacionados ao sistema
+/tmp    : diretorio temporario usado pela aplicacao
+/usr    : segunda estrtura de diretorios do linux do usuario que é importante mas nao é essencial para o sistema do linux
+/var    : Arquivos que são gravados com frequencia (logs, páginas web, email, imagens, etc)
+
+
+df -h   : permite conferir rapidamente a quantidade de espaço do disco rígido que já foi utilizado e o quanto ainda está disponível para uso.
+
+
+
+
+
+
+
+
+
+
+
+
+lista completa
+/bin    : Binários de usuários, essenciais no boot
+/sbin   : Binários do superusuário, essenciais no boot
+/boot   : Arquivo do gerenciador de partida e kernel, símbolos
+/dev    : Dispositivos do sistema
+/etc    : Arquivos de configuração globais
+ /etc/opt : Arquivos de configuração para aplicativos em /opt
+ /etc/X11 : Arquivos de configuração para o X Window System 11
+/home : Armazenamento de dados de contas de usuários normais
+/root : Armazenamento de dados de contas do superusuário
+/lib : Bibliotecas essenciais do sistema, de binários localizados em /bin e /sbin
+/mnt : Sistema de arquivos montado temporariamente
+/media : Ponto de montagem de mídias removíveis (como pen-drives, cd-rom)
+/opt : Pacotes estático de aplicações
+/proc : systema de arquivos virtual, onde pode fazer a interação com o kernel e processos do sistema
+/tmp : Arquivos temporários. Conteúdo geralmente apagado no reboot nas distribuições
+/usr : (unix system resources) - Hierarquia secundária (não essenciais no boot) para dados compartilhados de usuários
+  /usr/bin : O mesmo que a hierarquia /bin, mas contém binários não essenciais ao funcionamento da máquina ou para o recovery
+  /usr/include : Diretório padrãod para headers
+  /usr/lib : O mesmo que a hierarquia /lib, mas não essenciais ao boot
+  /usr/sbin : O emsmo que o /sbin, mas não essenciais ao boot da máquina
+  /usr/share : Dados compartilhados independentes de arquitetura
+  /usr/src : Armazenamento de código fonte da máquina
+  /usr/X11R6 : - X Window Sysem, versão 11R6
+  /usr/local : Armazenamento de binários não distribuidos na instalação principalda máquina, ou seja, fora do sistema de empacotamento. Também é o local de armazenamento terciário de dados
+/var : Arquivos que são gravados com frequencia (logs, páginas web, email, imagens, etc)
+  /var/lock : Arquivos de lock, usados para controlar corretamente os recursos em uso
+  /var/log : Arquivos de log, usado para logs em geral
+  /var/mail : Caixas de e-mail dos usuários do sistema em formato mailbox
+  /var/run : Contém dados sobre a execução do sistema desde seu primeiro boot 
+          (daemons e usuários)
+  /var/spool : Spooling de tarefas (fila de impressão, cache de pacotes, proxy, etc)
+  /var/spool/:ail - Antigo local da caixa de correio de usuários (deve ser usado /var/mail)
+  /var/tmp : Arquivos temporários. Quando usado em modo multi-usuário.
+
+
+  desligando e reiniciando linux
